@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moiz Haider | Portfolio</title>
+    <meta name="description" content="Portfolio of Moiz Haider, Senior Full-Stack Engineer.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+    <!-- Tailwind CSS (CDN for standalone without node) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#a855f7',
+                            dark: '#000000',
+                            card: '#111111',
+                            cardHover: '#1a1a1a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Orbitron', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-brand-dark text-gray-300 font-sans overflow-x-hidden selection:bg-brand-purple selection:text-white">
+
+    <!-- ThreeJS Background -->
+    <div id="canvas-container" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-32 pb-24 pt-16">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="min-h-[80vh] flex flex-col items-center justify-center text-center relative w-full pt-12">
+            
+            <!-- Decorative Badges -->
+            <div class="absolute top-10 left-10 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-brand-card border border-brand-purple/20 text-brand-purple shadow-[0_0_15px_rgba(168,85,247,0.3)] floating-badge">
+                <i class="fa-solid fa-code text-lg"></i>
+            </div>
+            <div class="absolute top-20 right-10 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-brand-card border border-brand-purple/20 text-brand-purple shadow-[0_0_15px_rgba(168,85,247,0.3)] floating-badge" style="animation-delay: 1s;">
+                <i class="fa-solid fa-brain text-lg"></i>
+            </div>
+            <div class="absolute bottom-10 left-20 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-brand-card border border-brand-purple/20 text-brand-purple shadow-[0_0_15px_rgba(168,85,247,0.3)] floating-badge" style="animation-delay: 2s;">
+                <i class="fa-solid fa-trophy text-lg"></i>
+            </div>
+            <div class="absolute bottom-20 right-20 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-brand-card border border-brand-purple/20 text-brand-purple shadow-[0_0_15px_rgba(168,85,247,0.3)] floating-badge" style="animation-delay: 1.5s;">
+                <i class="fa-solid fa-lightbulb text-lg"></i>
+            </div>
+
+            <p class="text-sm md:text-lg text-gray-400 mb-6 font-medium uppercase tracking-widest gs-reveal">
+                Woah! You Landed on the Portfolio Website of The
+            </p>
+            
+            <h1 class="font-display font-black text-6xl md:text-7xl lg:text-8xl text-brand-purple mb-8 tracking-tighter drop-shadow-[0_0_35px_rgba(168,85,247,0.8)] gs-reveal">
+                MOIZ HAIDER
+            </h1>
+            
+            <h2 class="text-xl md:text-2xl font-light mb-12 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 gs-reveal flex-wrap max-w-3xl mx-auto leading-relaxed">
+                <span class="text-white font-medium">Senior Full-Stack Engineer</span>
+                <span class="hidden md:inline text-brand-purple">|</span>
+                <span class="text-gray-400 text-center">Python · Node.js · React · Generative AI</span>
+            </h2>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-6 gs-reveal">
+                <a href="https://www.linkedin.com/in/moizhaider/" target="_blank" class="btn-glow px-8 py-3 rounded-full border-2 border-brand-purple text-white font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-brand-purple hover:text-white">
+                    Let's Connect
+                </a>
+                <a href="#" class="btn-glow px-8 py-3 rounded-full border-2 border-brand-purple text-white font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-brand-purple hover:text-white">
+                    View Resume
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="w-full flex flex-col items-center">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-10 text-center gs-reveal">
+                <span class="text-white">About Me - </span>
+                <span class="text-brand-purple">BEHIND THE CODE!</span>
+            </h2>
+            
+            <div class="w-full max-w-4xl bg-brand-card rounded-2xl p-8 md:p-12 border border-brand-purple/20 relative overflow-hidden group gs-reveal shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+                <!-- Bottom glow line -->
+                <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
+                
+                <p class="text-lg leading-relaxed text-gray-300 mb-6 text-center">
+                    Senior Full-Stack Engineer with 8+ years of experience designing, building and shipping scalable SaaS and AI-driven products for U.S.-based and international remote teams. Deep expertise in Python, Node.js, React and Angular, with a proven record of end-to-end product ownership from system design and architecture through deployment and maintenance.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300 text-center">
+                    Hands-on experience integrating Generative AI, RAG pipelines and LLM-powered features into production applications. Known for mentoring engineers, enforcing clean code standards and delivering high-quality software in fast-paced, distributed environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Work Experience Section -->
+        <section id="experience" class="w-full">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-16 text-center gs-reveal">
+                <span class="text-white">Work Experience - </span>
+                <span class="text-brand-purple">PROFESSIONAL JOURNEY!</span>
+            </h2>
+            
+            <div class="relative w-full max-w-5xl mx-auto">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-purple/30 rounded-full hidden md:block" id="timeline-line"></div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-0 w-1 bg-brand-purple rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)] hidden md:block" id="timeline-progress"></div>
+
+                <!-- Entry 1 -->
+                <div class="relative flex flex-col md:flex-row justify-between items-center w-full mb-20 timeline-entry gs-reveal">
+                    <!-- Date (Left for Right card) -->
+                    <div class="md:w-5/12 hidden md:flex justify-end pr-10 items-center">
+                        <div class="font-display text-xl font-bold text-brand-purple text-right">
+                            OCT 2024 - PRESENT
+                        </div>
+                    </div>
+                    
+                    <!-- Center Dot -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-brand-dark border-4 border-brand-purple shadow-[0_0_15px_rgba(168,85,247,1)] z-10 hidden md:block timeline-dot"></div>
+                    
+                    <!-- Content Card (Right) -->
+                    <div class="md:w-5/12 w-full md:pl-10 relative">
+                        <div class="absolute -top-10 -left-6 md:-left-20 font-display text-6xl font-black text-brand-purple/20 stroke-text z-0 select-none">01</div>
+                        <div class="bg-brand-card rounded-2xl p-6 md:p-8 border border-brand-purple/20 relative z-10 transition-all duration-300 hover:border-brand-purple/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+                            <div class="flex flex-col gap-4 mb-4">
+                                <div class="inline-block px-4 py-1 rounded-full bg-brand-purple/10 text-brand-purple border border-brand-purple/30 text-xs font-bold uppercase tracking-wider w-fit">
+                                    MetaLabs Tech
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">Lead Full-Stack Engineer</h3>
+                            <ul class="space-y-3 text-gray-300 text-sm md:text-base">
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                    <span>Lead end-to-end development of scalable SaaS platforms using Python, Node.js, React and Angular, owning features from system design through production deployment.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                    <span>Build responsive, cross-device web applications with modern front-end technologies.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                    <span>Mentor engineers across the team, drive code reviews and enforce clean, maintainable code standards.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="relative flex flex-col md:flex-row justify-between items-center w-full mb-20 timeline-entry gs-reveal">
+                    <!-- Content Card (Left) -->
+                    <div class="md:w-5/12 w-full md:pr-10 relative order-2 md:order-1">
+                        <div class="absolute -top-10 -right-6 md:-right-20 font-display text-6xl font-black text-brand-purple/20 stroke-text z-0 select-none">02</div>
+                        <div class="bg-brand-card rounded-2xl p-6 md:p-8 border border-brand-purple/20 relative z-10 transition-all duration-300 hover:border-brand-purple/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+                            <div class="flex flex-col items-end gap-4 mb-4">
+                                <div class="inline-block px-4 py-1 rounded-full bg-brand-purple/10 text-brand-purple border border-brand-purple/30 text-xs font-bold uppercase tracking-wider w-fit">
+                                    Health Vitals
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 text-right drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">Senior Frontend Developer</h3>
+                            <ul class="space-y-3 text-gray-300 text-sm md:text-base text-right">
+                                <li class="flex gap-3 justify-end">
+                                    <span>Developed complex, data-rich dashboards using React and Vue, improving frontend performance and state management.</span>
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                </li>
+                                <li class="flex gap-3 justify-end">
+                                    <span>Built reusable UI component libraries with React and Angular, increasing productivity across the entire development team.</span>
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                </li>
+                                <li class="flex gap-3 justify-end">
+                                    <span>Led front-end projects from inception to launch and partnered with UX designers to deliver seamless user interfaces.</span>
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Center Dot -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-brand-dark border-4 border-brand-purple shadow-[0_0_15px_rgba(168,85,247,1)] z-10 hidden md:block timeline-dot order-1 md:order-2"></div>
+                    
+                    <!-- Date (Right for Left card) -->
+                    <div class="md:w-5/12 hidden md:flex justify-start pl-10 items-center order-3">
+                        <div class="font-display text-xl font-bold text-brand-purple text-left">
+                            AUG 2022 - OCT 2024
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 3 -->
+                <div class="relative flex flex-col md:flex-row justify-between items-center w-full mb-20 timeline-entry gs-reveal">
+                    <!-- Date (Left for Right card) -->
+                    <div class="md:w-5/12 hidden md:flex justify-end pr-10 items-center">
+                        <div class="font-display text-xl font-bold text-brand-purple text-right">
+                            MAY 2021 - AUG 2022
+                        </div>
+                    </div>
+                    
+                    <!-- Center Dot -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-brand-dark border-4 border-brand-purple shadow-[0_0_15px_rgba(168,85,247,1)] z-10 hidden md:block timeline-dot"></div>
+                    
+                    <!-- Content Card (Right) -->
+                    <div class="md:w-5/12 w-full md:pl-10 relative">
+                        <div class="absolute -top-10 -left-6 md:-left-20 font-display text-6xl font-black text-brand-purple/20 stroke-text z-0 select-none">03</div>
+                        <div class="bg-brand-card rounded-2xl p-6 md:p-8 border border-brand-purple/20 relative z-10 transition-all duration-300 hover:border-brand-purple/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+                            <div class="flex flex-col gap-4 mb-4">
+                                <div class="inline-block px-4 py-1 rounded-full bg-brand-purple/10 text-brand-purple border border-brand-purple/30 text-xs font-bold uppercase tracking-wider w-fit">
+                                    Orange Health Labs
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">Back-End Developer</h3>
+                            <ul class="space-y-3 text-gray-300 text-sm md:text-base">
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                    <span>Designed and developed REST APIs using Python and Node.js powering data-heavy healthcare applications.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                    <span>Built web platform backends with Django and Node.js, developing server-side logic in Python and JavaScript.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                    <span>Integrated third-party APIs into web platforms and refactored legacy codebases, improving readability and performance.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 4 -->
+                <div class="relative flex flex-col md:flex-row justify-between items-center w-full timeline-entry gs-reveal">
+                    <!-- Content Card (Left) -->
+                    <div class="md:w-5/12 w-full md:pr-10 relative order-2 md:order-1">
+                        <div class="absolute -top-10 -right-6 md:-right-20 font-display text-6xl font-black text-brand-purple/20 stroke-text z-0 select-none">04</div>
+                        <div class="bg-brand-card rounded-2xl p-6 md:p-8 border border-brand-purple/20 relative z-10 transition-all duration-300 hover:border-brand-purple/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+                            <div class="flex flex-col items-end gap-4 mb-4">
+                                <div class="inline-block px-4 py-1 rounded-full bg-brand-purple/10 text-brand-purple border border-brand-purple/30 text-xs font-bold uppercase tracking-wider w-fit">
+                                    Mangovers
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 text-right drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">Full-Stack Developer</h3>
+                            <ul class="space-y-3 text-gray-300 text-sm md:text-base text-right">
+                                <li class="flex gap-3 justify-end">
+                                    <span>Built full-stack web applications using MEAN / MERN stacks, including databases, servers and back-end services.</span>
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                </li>
+                                <li class="flex gap-3 justify-end">
+                                    <span>Reduced page load times by optimizing front-end assets such as JavaScript bundles, stylesheets and images.</span>
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                </li>
+                                <li class="flex gap-3 justify-end">
+                                    <span>Integrated third-party APIs to extend platform functionality while reviewing code and resolving production defects.</span>
+                                    <i class="fa-solid fa-diamond text-[8px] mt-2 text-brand-purple"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Center Dot -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-brand-dark border-4 border-brand-purple shadow-[0_0_15px_rgba(168,85,247,1)] z-10 hidden md:block timeline-dot order-1 md:order-2"></div>
+                    
+                    <!-- Date (Right for Left card) -->
+                    <div class="md:w-5/12 hidden md:flex justify-start pl-10 items-center order-3">
+                        <div class="font-display text-xl font-bold text-brand-purple text-left">
+                            NOV 2019 - MAY 2021
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Education Section -->
+        <section id="education" class="w-full">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center gs-reveal">
+                <span class="text-white">Education - </span>
+                <span class="text-brand-purple">ACADEMIC FOUNDATION!</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-purple/20 transition-all duration-300 hover:border-brand-purple hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] group gs-reveal">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple border border-brand-purple/30 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                            Degree
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors duration-300">BS Computer Science (Software Engineering)</h3>
+                    <h4 class="text-xl font-medium text-gray-300 mb-4">University of Sahiwal</h4>
+                    <p class="text-brand-purple text-lg mb-2 font-bold">
+                        CGPA: 3.93 / 4.00
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Skills Section -->
+        <section id="skills" class="w-full">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center gs-reveal">
+                <span class="text-white">Technical Skills - </span>
+                <span class="text-brand-purple">CORE EXPERTISE!</span>
+            </h2>
+            
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto">
+                <!-- Hardcoded for full effect -->
+                <div class="skill-card gs-reveal"><i class="devicon-python-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">Python</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-nodejs-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">Node.js</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-react-original colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">React.js</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-angularjs-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">Angular</span></div>
+                <div class="skill-card gs-reveal"><i class="fa-solid fa-brain text-brand-purple text-4xl mb-3"></i><span class="text-sm font-medium text-center">Gen AI & LLMs</span></div>
+                
+                <div class="skill-card gs-reveal"><i class="devicon-nextjs-plain text-white text-4xl mb-3"></i><span class="text-sm font-medium text-center">Next.js</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-vuejs-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">Vue.js</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-typescript-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">TypeScript</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-javascript-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">JavaScript</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-html5-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">HTML / CSS</span></div>
+                
+                <div class="skill-card gs-reveal"><i class="devicon-django-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">Django</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-php-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">PHP</span></div>
+                <div class="skill-card gs-reveal"><i class="fa-solid fa-network-wired text-brand-purple text-4xl mb-3"></i><span class="text-sm font-medium text-center">RAG Systems</span></div>
+                <div class="skill-card gs-reveal"><i class="fa-solid fa-link text-brand-purple text-4xl mb-3"></i><span class="text-sm font-medium text-center">LangChain</span></div>
+                <div class="skill-card gs-reveal"><i class="fa-regular fa-face-smile text-yellow-500 text-4xl mb-3"></i><span class="text-sm font-medium text-center">Hugging Face</span></div>
+                
+                <div class="skill-card gs-reveal"><i class="devicon-postgresql-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">PostgreSQL</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-mongodb-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">MongoDB</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-amazonwebservices-original colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">AWS</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-docker-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">Docker</span></div>
+                <div class="skill-card gs-reveal"><i class="devicon-git-plain colored text-4xl mb-3"></i><span class="text-sm font-medium text-center">Git & CI/CD</span></div>
+            </div>
+        </section>
+
+        <!-- 6. Web Presence Section -->
+        <section id="profiles" class="w-full flex flex-col items-center">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center gs-reveal">
+                <span class="text-white">Web Presence - </span>
+                <span class="text-brand-purple">DEV NETWORK!</span>
+            </h2>
+            
+            <div class="flex flex-col items-center mb-16 gs-reveal">
+                <div class="w-40 h-40 rounded-full p-1 bg-gradient-to-tr from-brand-purple to-transparent mb-4 shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+                    <div class="w-full h-full rounded-full bg-brand-card overflow-hidden flex items-center justify-center">
+                        <img src="profile.jpg" alt="Moiz Haider" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <p class="font-display font-bold text-xl text-brand-purple tracking-widest drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">@MOIZHAIDER</p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-6 w-full max-w-2xl mx-auto mb-10">
+                <a href="https://www.linkedin.com/in/moizhaider/" target="_blank" class="profile-card gs-reveal">
+                    <div class="text-blue-500 text-3xl mb-3"><i class="fa-brands fa-linkedin"></i></div>
+                    <h3 class="font-bold text-white mb-1">LinkedIn</h3>
+                    <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Connect</p>
+                </a>
+                
+                <a href="https://github.com/moiz-haider" target="_blank" class="profile-card gs-reveal">
+                    <div class="text-white text-3xl mb-3"><i class="fa-brands fa-github"></i></div>
+                    <h3 class="font-bold text-white mb-1">GitHub</h3>
+                    <p class="text-xs text-gray-400 font-medium uppercase tracking-wider">Commit</p>
+                </a>
+            </div>
+            
+            <p class="text-gray-500 text-sm italic gs-reveal text-center">You can explore further by clicking on any of the profile cards above!</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-brand-card border-t border-brand-purple/20 pt-16 pb-8 px-4 sm:px-6 relative z-10">
+    <!-- Footer -->
+    <footer class="w-full bg-brand-card border-t border-brand-purple/20 pt-16 pb-8 px-4 sm:px-6 relative z-10 flex flex-col items-center">
+        <!-- Decorative Circle from Screenshot -->
+        <div class="hidden md:flex absolute top-12 left-12 w-10 h-10 rounded-full border border-gray-700 items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-brand-purple shadow-[0_0_8px_rgba(168,85,247,0.8)]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto flex flex-col items-center gap-10 mb-12 w-full">
+            
+            <div class="text-center">
+                <h2 class="font-display font-black text-4xl text-white mb-4 tracking-wide">Moiz<span class="text-brand-purple uppercase">HAIDER</span></h2>
+                <p class="text-gray-400 text-sm md:text-base tracking-wide">Innovation at the Intersection of Code and AI!</p>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center gap-6 md:gap-10 text-gray-300 text-sm md:text-base font-medium">
+                <a href="#hero" class="hover:text-brand-purple hover:-translate-y-1 transform transition-all duration-300">Home</a>
+                <a href="#about" class="hover:text-brand-purple hover:-translate-y-1 transform transition-all duration-300">About</a>
+                <a href="#experience" class="hover:text-brand-purple hover:-translate-y-1 transform transition-all duration-300">Experience</a>
+                <a href="#education" class="hover:text-brand-purple hover:-translate-y-1 transform transition-all duration-300">Education</a>
+                <a href="#skills" class="hover:text-brand-purple hover:-translate-y-1 transform transition-all duration-300">Skills</a>
+                <a href="#profiles" class="hover:text-brand-purple hover:-translate-y-1 transform transition-all duration-300">Profiles</a>
+            </nav>
+
+            <div class="flex gap-6 mt-2">
+                <a href="https://www.linkedin.com/in/moizhaider/" target="_blank" class="w-12 h-12 rounded-full bg-brand-dark border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:border-brand-purple hover:bg-brand-purple/10 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all duration-300">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="https://github.com/moiz-haider" target="_blank" class="w-12 h-12 rounded-full bg-brand-dark border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:border-brand-purple hover:bg-brand-purple/10 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all duration-300">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <div class="relative inline-block flex items-center justify-center" id="email-popup-container">
+                    <button id="email-btn" class="w-12 h-12 rounded-full bg-brand-dark border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:border-brand-purple hover:bg-brand-purple/10 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                    </button>
+                    <!-- Popup -->
+                    <div id="email-popup" class="absolute bottom-16 right-1/2 translate-x-1/2 md:translate-x-0 md:-right-4 bg-brand-card border border-brand-purple/50 p-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.4)] hidden flex-col gap-3 min-w-[280px] z-50 transition-opacity opacity-0 duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300 text-sm font-medium">Email Address</span>
+                            <button id="close-email-popup" class="text-gray-500 hover:text-white transition-colors"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <div class="flex items-center gap-2 bg-brand-dark p-3 rounded-lg border border-gray-800 overflow-hidden">
+                            <span class="text-brand-purple font-display text-sm truncate" id="email-text">moizmeta.dev@gmail.com</span>
+                        </div>
+                        <button id="copy-email-btn" class="w-full py-2 bg-brand-purple/20 hover:bg-brand-purple text-white rounded-lg text-sm font-bold transition-colors border border-brand-purple/50 flex items-center justify-center">
+                            <i class="fa-regular fa-copy mr-2"></i> <span id="copy-text">Copy Address</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-full max-w-4xl mx-auto border-t border-gray-800 pt-8 flex justify-center items-center">
+            <p class="text-gray-500 text-sm text-center">
+                &copy; 2026 Moiz Haider | Designed & Developed with <i class="fa-solid fa-heart text-brand-purple mx-1"></i> !
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="3d_background.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
